@@ -12,6 +12,11 @@
   }
 }
 
+.modal-hiden{
+  display:none
+}
+
+
 .overlay {
   position: fixed;
   top: 0;
@@ -47,6 +52,7 @@
     margin: 8px;
     border: none;
   }
+  
 
   &__submit-btn {
     margin: 8px;
@@ -59,3 +65,23 @@
     border-radius: 8px;
   }
 }
+
+.title {
+        font-size: 20px;
+        border: none;
+        border-bottom: cornflowerblue 3px solid;
+        margin-left: 40px;
+    }
+
+.time {
+    margin-left: 40px;
+    margin-top: 80px;
+    }
+.description {
+        border: none;
+        width: 350px;
+        resize: none;
+        margin-left: 40px;
+        margin-top: 80px;
+        width: 100%;
+    }

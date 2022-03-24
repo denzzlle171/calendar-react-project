@@ -1,0 +1,54 @@
+
+.popup {
+    &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgb(126, 131, 131);
+    opacity: 0.2;
+}
+    &__content {
+        position: absolute;
+        background: #fff;
+        padding: 8px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
+        z-index: 3
+    }
+    .delete-event-btn {
+        margin-left: 3px;
+        border: none;
+        background-color: transparent;
+        
+    }
+}
+// .overlay {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     z-index: 2;
+// }
+// .popup {
+//     &__content {
+//         position: absolute;
+//         background: #fff;
+//         padding: 8px;
+//         border: 1px solid transparent;
+//         border-radius: 4px;
+//         box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
+//     }
+//     .delete-event-btn {
+//         margin-left: 3px;
+//         border: none;
+//         background-color: transparent;
+//     }
+// }
+.popup-hiden{
+  display:none
+}
