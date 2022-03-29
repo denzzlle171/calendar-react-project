@@ -1,6 +1,5 @@
 import React from 'react';
 import Day from '../day/Day';
-
 import './week.scss';
 
 const Week = ({
@@ -10,7 +9,10 @@ const Week = ({
   setPopupActiv,
   coordinates,
   setCoordinates,
+  changeId,
+  setChangeId,
 }) => {
+
   return (
     <div className="calendar__week">
       {weekDates.map((dayStart) => {
@@ -31,11 +33,13 @@ const Week = ({
             setPopupActiv={setPopupActiv}
             coordinates={coordinates}
             setCoordinates={setCoordinates}
+            changeId={changeId}
+            setChangeId={setChangeId}
           />
         );
       })}
     </div>
   );
-};
+};;
 
 export default Week;

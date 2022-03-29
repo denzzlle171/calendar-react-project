@@ -1,8 +1,4 @@
 .calendar {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 60px);
-
   &__header {
     display: flex;
     height: 100px;
@@ -14,4 +10,46 @@
     flex: 1;
     border-left: 1px solid #eee;
   }
+   &__day-label {
+    flex: 1;
+  }
 }
+
+.day-label {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  opacity: 0.6;
+  
+
+  &__day-name {
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &__day-number {
+    text-align: center;
+    font-size: 22px;
+  }
+  
+}
+
+.mark {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: cornflowerblue;
+    flex-direction: column;
+    color: white;
+  }
+
+  .not_mark {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }

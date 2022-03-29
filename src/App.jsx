@@ -9,7 +9,8 @@ import {
 import moment from 'moment';
 import './common.scss';
 import Modal from './components/Modal/Modal.jsx';
-// import PopUp from './components/popup/PopUp.jsx';
+import events from './gateway/events';
+
 
 
 
@@ -19,6 +20,7 @@ const App =()=> {
  
   const [modalActiv, setModalActiv] = useState(false)
   
+  const [event, setEvent] = useState(events);
 
   const backwardWeek = () => {
     setWeekStartDate(weekStartDate = (moment(weekStartDate).subtract(7, 'days'))._d);
@@ -43,8 +45,13 @@ const App =()=> {
           setActiv={setModalActiv}
           activ={modalActiv}
         />
-        <Calendar weekDates={weekDates} />
-        <Modal activ={modalActiv} setActiv={setModalActiv} />
+        <Calendar weekDates={weekDates} events={event} setEvent={setEvent} />
+        <Modal
+          activ={modalActiv}
+          setActiv={setModalActiv}
+          events={event}
+          setEvent={setEvent}
+        />
       </>
     );
   }

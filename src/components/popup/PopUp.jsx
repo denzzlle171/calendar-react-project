@@ -1,10 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './popUp.scss';
-// import events from '../../gateway/events.js';
 
-
-
-const PopUp = ({ popupActiv,setPopupActiv, coordinates}) => {
+const PopUp = ({
+  popupActiv,
+  setPopupActiv,
+  coordinates,
+  changeId,
+  events,
+  setEvent,
+}) => {
+  const deleteEvent = () => {
+    const newEvents = events.filter((elem) => elem.id !== changeId);
+    console.log(newEvents);
+    setEvent((events = newEvents));
+    setPopupActiv((popupActiv = false));
+  };
 
   return (
     <div className={popupActiv ? 'popup' : 'popup-hiden'}>

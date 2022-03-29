@@ -1,36 +1,34 @@
 import React, { useState } from 'react';
 import './modal.scss';
-import events from '../../gateway/events.js'
 
-const Modal = ({ activ, setActiv }) => {
 
-  const [title, setTitle] = useState("")
-  const [date, setDate] = useState("")
-  const [startTime, setStartTime] = useState("")
-  const [endTime, setEndTime] = useState("")
-  const [description, setDescription] = useState("")
+const Modal = ({ activ, setActiv, events }) => {
+  const [title, setTitle] = useState('');
+  const [date, setDate] = useState('');
+  const [startTime, setStartTime] = useState('');
+  const [endTime, setEndTime] = useState('');
+  const [description, setDescription] = useState('');
 
   const onSubmit = (e) => {
     e.preventDefault();
-const newEvent = {
-  id: new Date().getTime(), // now time to Timestam
-  title: title,
-  description: description,
-  dateFrom: new Date(`${date} ${startTime}`),
-  dateTo: new Date(`${date} ${endTime}`),
-};
+    const newEvent = {
+      id: new Date().getTime(), // now time to Timestam
+      title: title,
+      description: description,
+      dateFrom: new Date(`${date} ${startTime}`),
+      dateTo: new Date(`${date} ${endTime}`),
+    };
 
     events.push(newEvent);
-    
-      e.target.title.value = ''
-      e.target.date.value = '';
-      e.target.startTime.value = '';
-      e.target.endTime.value = '';
-      e.target.description.value = '';
-    
-      setActiv((activ = false));
-    }   
-   
+
+    e.target.title.value = '';
+    e.target.date.value = '';
+    e.target.startTime.value = '';
+    e.target.endTime.value = '';
+    e.target.description.value = '';
+
+    setActiv((activ = false));
+  };
 
   return (
     <div className={activ ? 'modal-wraper' : 'modal-wraper modal-hiden'}>

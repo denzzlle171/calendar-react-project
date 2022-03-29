@@ -11,6 +11,9 @@ const Event = ({
   setPopupActiv,
   coordinates,
   setCoordinates,
+  id,
+  changeId,
+  setChangeId,
 }) => {
   const eventStyle = {
     height,
@@ -18,10 +21,11 @@ const Event = ({
   };
 
   const eventClick = (e) => {
-    setCoordinates({ x: e.clientX, y: e.clientY});
+    setCoordinates({ x: e.clientX, y: e.clientY });
     setPopupActiv((popupActiv = true));
+    setChangeId((changeId = id));
   };
-  
+
   return (
     <div style={eventStyle} className="event" onClick={eventClick}>
       <div className="event__title">{title}</div>
@@ -31,6 +35,3 @@ const Event = ({
 };
 
 export default Event;
-
-
-// coordinates = { x: 0, y: 0 };

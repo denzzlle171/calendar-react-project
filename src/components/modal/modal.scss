@@ -16,7 +16,6 @@
   display:none
 }
 
-
 .overlay {
   position: fixed;
   top: 0;
@@ -67,16 +66,17 @@
 }
 
 .title {
-        font-size: 20px;
-        border: none;
-        border-bottom: cornflowerblue 3px solid;
-        margin-left: 40px;
-    }
+    font-size: 20px;
+    border: none;
+    border-bottom: cornflowerblue 3px solid;
+    margin-left: 40px;
+  }
 
 .time {
     margin-left: 40px;
     margin-top: 80px;
-    }
+  }
+  
 .description {
         border: none;
         width: 350px;
