@@ -8,7 +8,7 @@ import {
 } from '../src/utils/dateUtils.js';
 import moment from 'moment';
 import './common.scss';
-import Modal from './components/Modal/Modal';
+import Modal from './components/modal/Modal';
 import events from './gateway/events';
 
 
