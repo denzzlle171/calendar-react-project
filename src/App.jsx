@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import Header from './components/header/Header.jsx';
-import Calendar from './components/calendar/Calendar.jsx';
+import Header from './components/header/Header';
+import Calendar from './components/calendar/Calendar';
 import {
   getWeekStartDate,
   generateWeekRange,
@@ -8,7 +8,7 @@ import {
 } from '../src/utils/dateUtils.js';
 import moment from 'moment';
 import './common.scss';
-import Modal from './components/Modal/Modal.jsx';
+import Modal from './components/Modal/Modal';
 import events from './gateway/events';
 
 
