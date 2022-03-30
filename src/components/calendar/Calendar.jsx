@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Navigation from './../navigation/Navigation';
 import Week from '../week/Week';
 import Sidebar from '../sidebar/Sidebar';
-import PopUp from '../popUp/PopUp';
+import PopUp from '../popup/PopUp';
 import './calendar.scss';
 
 const Calendar = ({ weekDates, events, setEvent }) => {

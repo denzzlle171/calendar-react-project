@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import RedLine from '../RedLine/RedLine';
+import RedLine from '../redline/RedLine';
 import Event from '../event/Event';
 import { formatMins } from '../../../src/utils/dateUtils.js';
 import './hour.scss';
