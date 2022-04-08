@@ -1,18 +1,16 @@
 import React from 'react';
 import './popUp.scss';
+import { deleteEventItem } from '../../gateway/events';
 
 const PopUp = ({
   popupActiv,
   setPopupActiv,
   coordinates,
   changeId,
-  events,
-  setEvent,
+  fetchEvents,
 }) => {
   const deleteEvent = () => {
-    const newEvents = events.filter((elem) => elem.id !== changeId);
-    console.log(newEvents);
-    setEvent((events = newEvents));
+    deleteEventItem(changeId).then((res) => fetchEvents(res));
     setPopupActiv((popupActiv = false));
   };
 
@@ -33,6 +31,7 @@ const PopUp = ({
     </div>
   );
 };
+
 export default PopUp;
 
 

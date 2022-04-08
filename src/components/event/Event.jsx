@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './event.scss';
 
 const Event = ({
@@ -9,7 +8,6 @@ const Event = ({
   time,
   popupActiv,
   setPopupActiv,
-  coordinates,
   setCoordinates,
   id,
   changeId,

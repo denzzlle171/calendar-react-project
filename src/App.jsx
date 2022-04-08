@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Header from './components/header/Header';
 import Calendar from './components/calendar/Calendar';
 import {
@@ -9,53 +9,73 @@ import {
 import moment from 'moment';
 import './common.scss';
 import Modal from './components/modal/Modal';
-import events from './gateway/events';
+import {getEventList} from './gateway/events';//
 
 
 
-
-const App =()=> {
-
+const App = () => {
   let [weekStartDate, setWeekStartDate] = useState(new Date());
- 
-  const [modalActiv, setModalActiv] = useState(false)
-  
-  const [event, setEvent] = useState(events);
+
+  const [modalActiv, setModalActiv] = useState(false);
+
+  const [eventList, setEventList] = useState([]); //
+
+  const fetchEvents = () => getEventList().then(setEventList);
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
 
   const backwardWeek = () => {
-    setWeekStartDate(weekStartDate = (moment(weekStartDate).subtract(7, 'days'))._d);
-  }
+    setWeekStartDate(
+      (weekStartDate = moment(weekStartDate).subtract(7, 'days')._d)
+    );
+  };
   const forwardWeek = () => {
     setWeekStartDate((weekStartDate = moment(weekStartDate).add(7, 'days')._d));
   };
   const curentWeek = () => {
-    setWeekStartDate(weekStartDate = new Date())
-  }
+    setWeekStartDate((weekStartDate = new Date()));
+  };
 
-  const curentMonth =  getDisplayedMonth(weekStartDate);
+  const curentMonth = getDisplayedMonth(weekStartDate);
   const weekDates = generateWeekRange(getWeekStartDate(weekStartDate));
 
-    return (
-      <>
-        <Header
-          clickBack={backwardWeek}
-          clickAhead={forwardWeek}
-          clickToday={curentWeek}
-          curentMonth={curentMonth}
-          setActiv={setModalActiv}
-          activ={modalActiv}
-        />
-        <Calendar weekDates={weekDates} events={event} setEvent={setEvent} />
-        <Modal
-          activ={modalActiv}
-          setActiv={setModalActiv}
-          events={event}
-          setEvent={setEvent}
-        />
-      </>
-    );
-  }
+  const newEventList = eventList.map((ev) => {
+    const { title, id, description, dateFrom, dateTo } = ev;
+    return {
+      title,
+      id,
+      description,
+      dateFrom: new Date(dateFrom),
+      dateTo: new Date(dateTo),
+    };
+  });
 
+  return (
+    <>
+      <Header
+        clickBack={backwardWeek}
+        clickAhead={forwardWeek}
+        clickToday={curentWeek}
+        curentMonth={curentMonth}
+        setActiv={setModalActiv}
+        activ={modalActiv}
+      />
+      <Calendar
+        weekDates={weekDates}
+        events={newEventList}
+        setEvent={setEventList}
+        fetchEvents={fetchEvents}
+      />
+      <Modal
+        activ={modalActiv}
+        setActiv={setModalActiv}
+        fetchEvents={fetchEvents} 
+      />
+    </>
+  );
+};;
 
 export default App;
 

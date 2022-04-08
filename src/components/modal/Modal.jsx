@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import './modal.scss';
+import { creteEvent } from '../../gateway/events';
 
-
-const Modal = ({ activ, setActiv, events }) => {
+const Modal = ({ activ, setActiv, fetchEvents }) => {
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [startTime, setStartTime] = useState('');
@@ -12,21 +12,20 @@ const Modal = ({ activ, setActiv, events }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const newEvent = {
-      id: new Date().getTime(), // now time to Timestam
       title: title,
       description: description,
       dateFrom: new Date(`${date} ${startTime}`),
       dateTo: new Date(`${date} ${endTime}`),
     };
 
-    events.push(newEvent);
+    creteEvent(newEvent).then(res=>fetchEvents(res))
 
     e.target.title.value = '';
     e.target.date.value = '';
     e.target.startTime.value = '';
     e.target.endTime.value = '';
     e.target.description.value = '';
-
+   
     setActiv((activ = false));
   };
 
@@ -41,7 +40,6 @@ const Modal = ({ activ, setActiv, events }) => {
             >
               +
             </button>
-
             <form onSubmit={onSubmit} className="event-form">
               <input
                 values={title}
@@ -91,7 +89,7 @@ const Modal = ({ activ, setActiv, events }) => {
       </div>
     </div>
   );
-};
+};;
 
 
 export default Modal;
