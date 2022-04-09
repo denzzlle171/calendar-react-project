@@ -3,6 +3,7 @@ import RedLine from '../redline/RedLine';
 import Event from '../event/Event';
 import { formatMins } from '../../../src/utils/dateUtils.js';
 import './hour.scss';
+import PropTypes from 'prop-types';
 
 const Hour = ({
   dataHour,
@@ -57,5 +58,17 @@ const Hour = ({
     </div>
   );
 };;
+
+Hour.propTypes = {
+  dataHour: PropTypes.number,
+  hourEvents: PropTypes.array,
+  popupActiv: PropTypes.bool.isRequired,
+  setPopupActiv: PropTypes.func.isRequired,
+  setCoordinates: PropTypes.func.isRequired,
+  changeId: PropTypes.string,
+  setChangeId: PropTypes.func.isRequired,
+};
+
+
 
 export default Hour;

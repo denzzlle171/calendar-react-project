@@ -1,6 +1,7 @@
 import React from 'react';
 import { days } from '../../utils/dateUtils.js';
 import './navigation.scss';
+import PropTypes from 'prop-types';
 
 const Navigation = ({ weekDates }) => {
  
@@ -22,6 +23,10 @@ const Navigation = ({ weekDates }) => {
       ))}
     </header>
   );
+};
+
+Navigation.propTypes = {
+  weekDates: PropTypes.array,
 };
 
 export default Navigation;

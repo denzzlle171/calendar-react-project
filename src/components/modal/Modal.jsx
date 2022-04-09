@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
 import './modal.scss';
 import { creteEvent } from '../../gateway/events';
+import PropTypes from 'prop-types';
 
 const Modal = ({ activ, setActiv, fetchEvents }) => {
   const [title, setTitle] = useState('');
@@ -90,6 +91,13 @@ const Modal = ({ activ, setActiv, fetchEvents }) => {
     </div>
   );
 };;
+
+
+Modal.propTypes = {
+  activ: PropTypes.bool.isRequired,
+  setActiv: PropTypes.func.isRequired,
+  fetchEvents: PropTypes.func.isRequired,
+};
 
 
 export default Modal;

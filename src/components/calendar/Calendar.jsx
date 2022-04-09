@@ -4,6 +4,7 @@ import Week from '../week/Week';
 import Sidebar from '../sidebar/Sidebar';
 import PopUp from '../popup/PopUp';
 import './calendar.scss';
+import PropTypes from 'prop-types';
 
 const Calendar = ({ weekDates, events, setEvent, fetchEvents }) => {
   const [popupActiv, setPopupActiv] = useState(false);
@@ -37,7 +38,14 @@ const Calendar = ({ weekDates, events, setEvent, fetchEvents }) => {
       </div>
     </section>
   );
-};;
+};
+
+Calendar.propTypes = {
+  weekDates: PropTypes.array.isRequired,
+  events: PropTypes.array.isRequired,
+  setEvent: PropTypes.func.isRequired,
+  fetchEvents: PropTypes.func.isRequired,
+};
 
 
 export default Calendar;

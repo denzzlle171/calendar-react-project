@@ -1,6 +1,7 @@
 import React from 'react';
 import Day from '../day/Day';
 import './week.scss';
+import PropTypes from 'prop-types';
 
 const Week = ({
   weekDates,
@@ -18,7 +19,6 @@ const Week = ({
         const dayEnd = new Date(dayStart.getTime()).setHours(
           dayStart.getHours() + 24
         );
-        //getting all events from the day we will render
         const dayEvents = events.filter(
           (event) => event.dateFrom > dayStart && event.dateTo < dayEnd
         );
@@ -38,6 +38,15 @@ const Week = ({
       })}
     </div>
   );
-};;;
+};
+
+Week.propTypes = {
+  events: PropTypes.array.isRequired,
+  popupActiv: PropTypes.bool.isRequired,
+  setPopupActiv: PropTypes.func.isRequired,
+  setCoordinates: PropTypes.func.isRequired,
+  changeId: PropTypes.string,
+  setChangeId: PropTypes.func.isRequired,
+};
 
 export default Week;

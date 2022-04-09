@@ -1,5 +1,6 @@
 import React from 'react';
 import './header.scss';
+import PropTypes from 'prop-types';
 
 const Header = ({
   clickBack,
@@ -39,6 +40,15 @@ const Header = ({
   );
 };
 
+
+Header.propTypes = {
+  clickBack: PropTypes.func.isRequired,
+  clickAhead: PropTypes.func.isRequired,
+  clickToday: PropTypes.func.isRequired,
+  curentMonth: PropTypes.string.isRequired,
+  setActiv: PropTypes.func.isRequired,
+  activ: PropTypes.bool.isRequired,
+};
 export default Header;
 
 

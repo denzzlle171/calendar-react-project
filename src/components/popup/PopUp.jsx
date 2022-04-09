@@ -1,6 +1,7 @@
 import React from 'react';
 import './popUp.scss';
 import { deleteEventItem } from '../../gateway/events';
+import PropTypes from 'prop-types';
 
 const PopUp = ({
   popupActiv,
@@ -32,7 +33,14 @@ const PopUp = ({
   );
 };
 
-export default PopUp;
+PopUp.propTypes = {
+  popupActiv: PropTypes.bool,
+  setPopupActiv: PropTypes.func,
+  coordinates: PropTypes.object,
+  changeId: PropTypes.string,
+  fetchEvents: PropTypes.func,
+};
 
+export default PopUp;
 
 

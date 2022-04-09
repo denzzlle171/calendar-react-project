@@ -1,6 +1,8 @@
 import React from 'react';
 import Hour from '../hour/Hour';
 import './day.scss';
+import PropTypes from 'prop-types';
+
 
 const Day = ({
   dataDay,
@@ -41,5 +43,15 @@ const Day = ({
     </div>
   );
 };;;
+
+Day.propTypes = {
+  dataDay: PropTypes.number,
+  dayEvents: PropTypes.array,
+  popupActiv: PropTypes.bool.isRequired,
+  setPopupActiv: PropTypes.func.isRequired,
+  setCoordinates: PropTypes.func.isRequired,
+  changeId: PropTypes.string,
+  setChangeId: PropTypes.func.isRequired,
+};
 
 export default Day;
