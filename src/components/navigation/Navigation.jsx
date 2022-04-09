@@ -8,10 +8,12 @@ const Navigation = ({ weekDates }) => {
   return (
     <header className="calendar__header">
       {weekDates.map((dayDate) => (
-        <div className="calendar__day-label day-label">
+        <div key={dayDate.getDate()} className="calendar__day-label day-label">
           <div
             className={
-              dayDate.toDateString() === new Date().toDateString() ? 'mark' : 'not_mark'
+              dayDate.toDateString() === new Date().toDateString()
+                ? 'mark'
+                : 'not_mark'
             }
           >
             <span className="day-label__day-name">
