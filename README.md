@@ -10,6 +10,13 @@
 - [React](https://reactjs.org/docs/react-component.html)
 - [Webpack](https://webpack.js.org/)
 
+### Mockapi.io has been used for the project
+- [restAPI](https://mockapi.io)
+
+
+
+
+
 ### Runs the app in the development mode "npm start" 
 ### Runs app in the build mode "npm run build" 
 

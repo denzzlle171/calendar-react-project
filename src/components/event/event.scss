@@ -1,7 +1,7 @@
 .event {
   position: absolute;
   width: 80%;
-  background-color: cornflowerblue;
+  background-color: #6495ed;
   z-index: 1;
   border-radius: 8px;
   padding: 8px;
@@ -17,7 +17,7 @@
 
   &:hover {
     font-weight: bold;
-    background-color: red;
+    background-color: #ff0000;
     cursor: pointer
   }
 }
