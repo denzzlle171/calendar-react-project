@@ -7,10 +7,8 @@ import PropTypes from 'prop-types';
 const Day = ({
   dataDay,
   dayEvents,
-  popupActiv,
   setPopupActiv,
   setCoordinates,
-  changeId,
   setChangeId,
   day,
 }) => {
@@ -32,10 +30,8 @@ const Day = ({
             key={dataDay + hour}
             dataHour={hour}
             hourEvents={hourEvents}
-            popupActiv={popupActiv}
             setPopupActiv={setPopupActiv}
             setCoordinates={setCoordinates}
-            changeId={changeId}
             setChangeId={setChangeId}
           />
         );

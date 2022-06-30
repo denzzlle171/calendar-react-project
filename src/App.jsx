@@ -28,14 +28,14 @@ const App = () => {
 
   const backwardWeek = () => {
     setWeekStartDate(
-      (weekStartDate = moment(weekStartDate).subtract(7, 'days')._d)
+      (moment(weekStartDate).subtract(7, 'days')._d)
     );
   };
   const forwardWeek = () => {
-    setWeekStartDate((weekStartDate = moment(weekStartDate).add(7, 'days')._d));
+    setWeekStartDate((moment(weekStartDate).add(7, 'days')._d));
   };
   const curentWeek = () => {
-    setWeekStartDate((weekStartDate = new Date()));
+    setWeekStartDate((new Date()));
   };
 
   const curentMonth = getDisplayedMonth(weekStartDate);

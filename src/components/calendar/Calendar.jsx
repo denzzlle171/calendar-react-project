@@ -28,10 +28,8 @@ const Calendar = ({ weekDates, events, setEvent, fetchEvents }) => {
           <Week
             weekDates={weekDates}
             events={events}
-            popupActiv={popupActiv}
             setPopupActiv={setPopupActiv}
             setCoordinates={setCoordinates}
-            changeId={changeId}
             setChangeId={setChangeId}
           />
         </div>

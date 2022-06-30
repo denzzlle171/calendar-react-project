@@ -9,11 +9,9 @@ const Event = ({
   marginTop,
   title,
   time,
-  popupActiv,
   setPopupActiv,
   setCoordinates,
   id,
-  changeId,
   setChangeId,
 }) => {
   const eventStyle = {
@@ -23,8 +21,8 @@ const Event = ({
 
   const eventClick = (e) => {
     setCoordinates({ x: e.clientX, y: e.clientY });
-    setPopupActiv((popupActiv = true));
-    setChangeId((changeId = id));
+    setPopupActiv((true));
+    setChangeId((id));
   };
 
   return (
@@ -40,11 +38,9 @@ Event.propTypes = {
   marginTop: PropTypes.number.isRequired,
   title: PropTypes.string,
   time: PropTypes.string.isRequired,
-  popupActiv: PropTypes.bool.isRequired,
   setPopupActiv: PropTypes.func.isRequired,
   setCoordinates: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
-  changeId: PropTypes.string,
   setChangeId: PropTypes.func.isRequired,
 };
 

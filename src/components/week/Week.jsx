@@ -6,10 +6,9 @@ import PropTypes from 'prop-types';
 const Week = ({
   weekDates,
   events,
-  popupActiv,
   setPopupActiv,
   setCoordinates,
-  changeId,
+
   setChangeId,
 }) => {
 
@@ -28,10 +27,8 @@ const Week = ({
             key={dayStart.getDate()}
             dataDay={dayStart.getDate()}
             dayEvents={dayEvents}
-            popupActiv={popupActiv}
             setPopupActiv={setPopupActiv}
             setCoordinates={setCoordinates}
-            changeId={changeId}
             setChangeId={setChangeId}
           />
         );
@@ -42,10 +39,8 @@ const Week = ({
 
 Week.propTypes = {
   events: PropTypes.array.isRequired,
-  popupActiv: PropTypes.bool.isRequired,
   setPopupActiv: PropTypes.func.isRequired,
   setCoordinates: PropTypes.func.isRequired,
-  changeId: PropTypes.string,
   setChangeId: PropTypes.func.isRequired,
 };
 

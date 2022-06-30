@@ -8,10 +8,8 @@ import PropTypes from 'prop-types';
 const Hour = ({
   dataHour,
   hourEvents,
-  popupActiv,
   setPopupActiv,
   setCoordinates,
-  changeId,
   setChangeId,
   day,
 }) => {
@@ -46,10 +44,8 @@ const Hour = ({
             marginTop={dateFrom.getMinutes()}
             time={`${eventStart} - ${eventEnd}`}
             title={title}
-            popupActiv={popupActiv}
             setPopupActiv={setPopupActiv}
             setCoordinates={setCoordinates}
-            changeId={changeId}
             setChangeId={setChangeId}
             id={id}
           />
@@ -62,10 +58,8 @@ const Hour = ({
 Hour.propTypes = {
   dataHour: PropTypes.number,
   hourEvents: PropTypes.array,
-  popupActiv: PropTypes.bool.isRequired,
   setPopupActiv: PropTypes.func.isRequired,
   setCoordinates: PropTypes.func.isRequired,
-  changeId: PropTypes.string,
   setChangeId: PropTypes.func.isRequired,
 };
 
