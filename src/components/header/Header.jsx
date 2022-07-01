@@ -8,12 +8,11 @@ const Header = ({
   clickToday,
   curentMonth,
   setActiv,
-  activ,
 }) => {
   return (
     <header className="header">
       <button
-        onClick={() => setActiv((activ = true))}
+        onClick={() => setActiv((true))}
         className="button create-event-btn"
       >
         <i className="fas fa-plus create-event-btn__icon"></i>Create
@@ -47,7 +46,7 @@ Header.propTypes = {
   clickToday: PropTypes.func.isRequired,
   curentMonth: PropTypes.string.isRequired,
   setActiv: PropTypes.func.isRequired,
-  activ: PropTypes.bool.isRequired,
+  
 };
 export default Header;
 

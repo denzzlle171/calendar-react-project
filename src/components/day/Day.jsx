@@ -43,7 +43,6 @@ const Day = ({
 Day.propTypes = {
   dataDay: PropTypes.number,
   dayEvents: PropTypes.array,
-  popupActiv: PropTypes.bool.isRequired,
   setPopupActiv: PropTypes.func.isRequired,
   setCoordinates: PropTypes.func.isRequired,
   changeId: PropTypes.string,

@@ -12,14 +12,14 @@ const PopUp = ({
 }) => {
   const deleteEvent = () => {
     deleteEventItem(changeId).then((res) => fetchEvents(res));
-    setPopupActiv((popupActiv = false));
+    setPopupActiv(( false));
   };
 
   return (
     <div className={popupActiv ? 'popup' : 'popup-hiden'}>
       <div
         className="popup__overlay"
-        onClick={() => setPopupActiv((popupActiv = false))}
+        onClick={() => setPopupActiv((false))}
       ></div>
       <div
         style={{ left: coordinates.x, top: coordinates.y }}

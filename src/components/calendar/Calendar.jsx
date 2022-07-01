@@ -6,7 +6,7 @@ import PopUp from '../popup/PopUp';
 import './calendar.scss';
 import PropTypes from 'prop-types';
 
-const Calendar = ({ weekDates, events, setEvent, fetchEvents }) => {
+const Calendar = ({ weekDates, events, fetchEvents }) => {
   const [popupActiv, setPopupActiv] = useState(false);
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
   const [changeId, setChangeId] = useState(null);
