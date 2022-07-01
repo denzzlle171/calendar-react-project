@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import './modal.scss';
 import { creteEvent } from '../../gateway/events';
 import PropTypes from 'prop-types';
@@ -19,14 +19,14 @@ const Modal = ({ activ, setActiv, fetchEvents }) => {
       dateTo: new Date(`${date} ${endTime}`),
     };
 
-    creteEvent(newEvent).then(res=>fetchEvents(res))
+    creteEvent(newEvent).then((res) => fetchEvents(res));
 
     e.target.title.value = '';
     e.target.date.value = '';
     e.target.startTime.value = '';
     e.target.endTime.value = '';
     e.target.description.value = '';
-   
+
     setActiv((activ = false));
   };
 
@@ -90,14 +90,12 @@ const Modal = ({ activ, setActiv, fetchEvents }) => {
       </div>
     </div>
   );
-};;
-
+};
 
 Modal.propTypes = {
   activ: PropTypes.bool.isRequired,
   setActiv: PropTypes.func.isRequired,
   fetchEvents: PropTypes.func.isRequired,
 };
-
 
 export default Modal;

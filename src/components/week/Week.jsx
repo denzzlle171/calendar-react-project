@@ -11,7 +11,6 @@ const Week = ({
 
   setChangeId,
 }) => {
-
   return (
     <div className="calendar__week">
       {weekDates.map((dayStart) => {

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/header/Header';
 import Calendar from './components/calendar/Calendar';
 import {
@@ -9,9 +9,7 @@ import {
 import moment from 'moment';
 import './common.scss';
 import Modal from './components/modal/Modal';
-import {getEventList} from './gateway/events';//
-
-
+import { getEventList } from './gateway/events'; //
 
 const App = () => {
   let [weekStartDate, setWeekStartDate] = useState(new Date());
@@ -27,15 +25,13 @@ const App = () => {
   }, []);
 
   const backwardWeek = () => {
-    setWeekStartDate(
-      (moment(weekStartDate).subtract(7, 'days')._d)
-    );
+    setWeekStartDate(moment(weekStartDate).subtract(7, 'days')._d);
   };
   const forwardWeek = () => {
-    setWeekStartDate((moment(weekStartDate).add(7, 'days')._d));
+    setWeekStartDate(moment(weekStartDate).add(7, 'days')._d);
   };
   const curentWeek = () => {
-    setWeekStartDate((new Date()));
+    setWeekStartDate(new Date());
   };
 
   const curentMonth = getDisplayedMonth(weekStartDate);
@@ -71,12 +67,10 @@ const App = () => {
       <Modal
         activ={modalActiv}
         setActiv={setModalActiv}
-        fetchEvents={fetchEvents} 
+        fetchEvents={fetchEvents}
       />
     </>
   );
-};;
+};
 
 export default App;
-
-

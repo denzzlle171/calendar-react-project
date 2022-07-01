@@ -12,8 +12,8 @@
   }
 }
 
-.modal-hiden{
-  display:none
+.modal-hiden {
+  display: none;
 }
 
 .overlay {
@@ -51,7 +51,6 @@
     margin: 8px;
     border: none;
   }
-  
 
   &__submit-btn {
     margin: 8px;
@@ -66,22 +65,21 @@
 }
 
 .title {
-    font-size: 20px;
-    border: none;
-    border-bottom: #6495ed 3px solid;
-    margin-left: 40px;
-  }
+  font-size: 20px;
+  border: none;
+  border-bottom: #6495ed 3px solid;
+  margin-left: 40px;
+}
 
 .time {
-    margin-left: 40px;
-    margin-top: 80px;
-  }
-  
+  margin-left: 40px;
+  margin-top: 80px;
+}
+
 .description {
-        border: none;
-        width: 300px;
-        resize: none;
-        margin-left: 40px;
-        margin-top: 80px;
-       
-    }
+  border: none;
+  width: 300px;
+  resize: none;
+  margin-left: 40px;
+  margin-top: 80px;
+}

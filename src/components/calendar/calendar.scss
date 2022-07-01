@@ -3,10 +3,8 @@
   flex-direction: column;
   height: calc(100vh - 60px);
 
-    &__body {
-      display: flex;
-      overflow: auto;
-    }
-
+  &__body {
+    display: flex;
+    overflow: auto;
+  }
 }
-

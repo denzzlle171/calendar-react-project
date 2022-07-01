@@ -12,14 +12,14 @@ const PopUp = ({
 }) => {
   const deleteEvent = () => {
     deleteEventItem(changeId).then((res) => fetchEvents(res));
-    setPopupActiv(( false));
+    setPopupActiv(false);
   };
 
   return (
     <div className={popupActiv ? 'popup' : 'popup-hiden'}>
       <div
         className="popup__overlay"
-        onClick={() => setPopupActiv((false))}
+        onClick={() => setPopupActiv(false)}
       ></div>
       <div
         style={{ left: coordinates.x, top: coordinates.y }}
@@ -42,5 +42,3 @@ PopUp.propTypes = {
 };
 
 export default PopUp;
-
-

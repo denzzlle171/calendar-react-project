@@ -2,8 +2,6 @@ import React from 'react';
 import './event.scss';
 import PropTypes from 'prop-types';
 
-
-
 const Event = ({
   height,
   marginTop,
@@ -21,8 +19,8 @@ const Event = ({
 
   const eventClick = (e) => {
     setCoordinates({ x: e.clientX, y: e.clientY });
-    setPopupActiv((true));
-    setChangeId((id));
+    setPopupActiv(true);
+    setChangeId(id);
   };
 
   return (

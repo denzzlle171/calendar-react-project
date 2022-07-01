@@ -4,7 +4,6 @@ import './navigation.scss';
 import PropTypes from 'prop-types';
 
 const Navigation = ({ weekDates }) => {
- 
   return (
     <header className="calendar__header">
       {weekDates.map((dayDate) => (
@@ -32,8 +31,3 @@ Navigation.propTypes = {
 };
 
 export default Navigation;
-
-
-
-
-

@@ -24,12 +24,10 @@ const Hour = ({
 
   return (
     <div className="calendar__time-slot" data-time={dataHour + 1}>
-      
       {day.toDateString() === nowTime.toDateString() &&
         dataHour === nowTime.getHours() && <RedLine nowTime={nowTime} />}
 
       {hourEvents.map(({ id, dateFrom, dateTo, title }) => {
-
         const eventStart = `${dateFrom.getHours()}:${formatMins(
           dateFrom.getMinutes()
         )}`;
@@ -53,7 +51,7 @@ const Hour = ({
       })}
     </div>
   );
-};;
+};
 
 Hour.propTypes = {
   dataHour: PropTypes.number,
@@ -62,7 +60,5 @@ Hour.propTypes = {
   setCoordinates: PropTypes.func.isRequired,
   setChangeId: PropTypes.func.isRequired,
 };
-
-
 
 export default Hour;

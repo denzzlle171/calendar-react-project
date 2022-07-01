@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Navigation from './../navigation/Navigation';
 import Week from '../week/Week';
 import Sidebar from '../sidebar/Sidebar';
@@ -45,6 +45,4 @@ Calendar.propTypes = {
   fetchEvents: PropTypes.func.isRequired,
 };
 
-
 export default Calendar;
-

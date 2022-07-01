@@ -3,7 +3,6 @@ import Hour from '../hour/Hour';
 import './day.scss';
 import PropTypes from 'prop-types';
 
-
 const Day = ({
   dataDay,
   dayEvents,
@@ -12,7 +11,6 @@ const Day = ({
   setChangeId,
   day,
 }) => {
-
   const hours = Array(24)
     .fill()
     .map((val, index) => index);
@@ -38,7 +36,7 @@ const Day = ({
       })}
     </div>
   );
-};;;
+};
 
 Day.propTypes = {
   dataDay: PropTypes.number,
